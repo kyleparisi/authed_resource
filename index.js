@@ -1,3 +1,4 @@
+if (!process.env.JWKSURI) require('./config/env');
 const debug = require("debug")(process.env.DEBUG_NAMESPACE);
 global.debug = debug;
 const express = require("express");
@@ -36,3 +37,5 @@ app.get("/authorized", function(req, res) {
 });
 
 app.listen(port);
+
+module.exports = app;
